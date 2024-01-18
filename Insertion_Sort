@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class Main {
+    static void insertion_sort(int[] arr, int n) {
+        for (int i = 1; i < n ; i++) {
+            int j = i;
+
+            while (j > 0 && arr[j - 1] > arr[j]) {
+                swap(arr, j - 1, j);
+                j--;
+            }
+        }
+    }
+
+    public static void swap(int arr[], int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    public static void main(String args[]) {
+        int arr[] = {13, 46, 24, 52, 20, 9};
+        int n = arr.length;
+        System.out.println("Before Using insertion Sort: ");
+        System.out.println(Arrays.toString(arr));
+        System.out.println();
+        insertion_sort(arr, n);
+        System.out.println("After sorting");
+        System.out.println(Arrays.toString(arr));
+    }
+}
