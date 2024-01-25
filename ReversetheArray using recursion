@@ -1,32 +1,34 @@
+public class Main {
+    public static void reverseArray(int A[], int start, int end) {
+        if (start >= end) {
+            return;
+        }
 
-public class Main{
-   public static void reverseArray(int A[], int start, int end){
-      
-              if (start>=end) {
-               return ;
-              }
-              swap(A,start,end);
-   }
-   
+        // Swap elements at start and end indices
+        swap(A, start, end);
 
-   public static void swap(int A[], int start, int end){
-         int i=0;    
-         int temp=0;
-         temp = A[start];
-         A[start]=A[end];
-         A[end]=temp;
-}
-    public static void main(String[] args) 
-{       
-        int A[] ={1,2,3,4,5,6,9,10};
+        // Recursively reverse the rest of the array
+        reverseArray(A, start + 1, end - 1);
+    }
+
+    public static void swap(int A[], int start, int end) {
+        int temp = A[start];
+        A[start] = A[end];
+        A[end] = temp;
+    }
+
+    public static void main(String[] args) {
+        int A[] = {1, 2, 3, 4, 5, 6, 9, 10};
         int n = A.length;
-        int start=0;
-        int end=n-1;
-        reverseArray(A,start,end);
-        
-        for (int i = 0; i < n; i++) {
-         System.out.print(A[i] + " ");
-     }
+        int start = 0;
+        int end = n - 1;
 
+        // Call the reverseArray function
+        reverseArray(A, start, end);
+
+        // Print the reversed array
+        for (int i = 0; i < n; i++) {
+            System.out.print(A[i] + " ");
+        }
     }
 }
