@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Main{
+public class Bubble_sort {
     public static void main(String [] args){
         int a[]= {13,46,24,52,20,9};
 
